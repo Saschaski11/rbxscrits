@@ -178,7 +178,7 @@ checkBtn.MouseButton1Click:Connect(function()
         status.TextColor3 = Colors.StatusSuccess
         wait(0.3)
         screenGui:Destroy()
-        loadstring(HttpGet(game, MainScriptURL))()
+        loadstring(game:HttpGet(MainScriptURL))()
     else
         status.Text = msg
         status.TextColor3 = Colors.StatusError
