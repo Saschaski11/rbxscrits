@@ -2,7 +2,7 @@ name: Update key.txt every 6 hours
 
 on:
   schedule:
-    - cron: "0 */6 * * *"  # alle 6 Stunden, zur vollen Stunde UTC
+    - cron: "0 */6 * * *"  # every 6 hours
   workflow_dispatch:
 
 jobs:
@@ -17,10 +17,8 @@ jobs:
           # generate a random 10-digit number
           KEY=$(shuf -i 1000000000-9999999999 -n 1)
           
-          # write to key.txt
-          echo "<!-- [START AUTO UPDATE] -->" > key.txt
-          echo "$KEY" >> key.txt
-          echo "<!-- [END AUTO UPDATE] -->" >> key.txt
+          # overwrite key.txt with only the key
+          echo "$KEY" > key.txt
 
       - name: Commit changes
         run: |
