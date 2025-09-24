@@ -1,0 +1,27 @@
+name: Update key.txt daily
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # täglich um 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Update key.txt
+        run: |
+          echo "<!-- [START AUTO UPDATE] -->" > key.txt
+          echo "Neuer Key: $(date)" >> key.txt
+          echo "<!-- [END AUTO UPDATE] -->" >> key.txt
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add key.txt
+          git commit -m "Update key.txt"
+          git push
