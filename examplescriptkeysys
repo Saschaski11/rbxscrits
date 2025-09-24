@@ -1,7 +1,7 @@
 -- CONFIG
-local KeyListURL = "https://pastebin.com/raw/YourPasteIDHere"
+local KeyListURL = "https://raw.githubusercontent.com/Saschaski11/rbxscrits/refs/heads/main/key.txt"
 local MainScriptURL = "https://pastebin.com/raw/YourMainScript"
-local GetKeyURL = "https://pastebin.com/YourKeyHere"
+local GetKeyURL = "https://link-hub.net/1401246/CYmPm5aaLjIq"
 
 -- COLOR PALETTE
 local Colors = {
