@@ -1,6 +1,6 @@
 -- CONFIG
 local KeyListURL = "https://raw.githubusercontent.com/Saschaski11/rbxscrits/refs/heads/main/key.txt"
-local MainScriptURL = "https://raw.githubusercontent.com/Saschaski11/rbxscrits/refs/heads/main/99daysintheforest/main"
+local MainScriptURL = "https://pastebin.com/raw/RZK9XdtH"
 local GetKeyURL = "https://link-hub.net/1401246/CYmPm5aaLjIq"
 
 -- COLOR PALETTE
