@@ -1,8 +1,8 @@
-name: Update key.txt daily
+name: Update key.txt every 6 hours
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # täglich um 00:00 UTC
+    - cron: "0 */6 * * *"  # alle 6 Stunden, zur vollen Stunde UTC
   workflow_dispatch:
 
 jobs:
@@ -12,10 +12,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Update key.txt
+      - name: Update key.txt with random 10-digit number
         run: |
+          # generate a random 10-digit number
+          KEY=$(shuf -i 1000000000-9999999999 -n 1)
+          
+          # write to key.txt
           echo "<!-- [START AUTO UPDATE] -->" > key.txt
-          echo "Neuer Key: $(date)" >> key.txt
+          echo "$KEY" >> key.txt
           echo "<!-- [END AUTO UPDATE] -->" >> key.txt
 
       - name: Commit changes
